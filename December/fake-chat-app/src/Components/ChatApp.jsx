@@ -5,11 +5,18 @@ import Contacts from "./Contacts";
 
 
 function ChatApp(){
-    const[message,setMessage]=React.useState([]);
+    const[message,setMessage]=React.useState([ ]);
     const [subscribedTo,setSubcribedTo]=React.useState(user[0]);
     React.useEffect(()=>{
-        
-    },[])
+        const connection= createConnection(subscribedTo);
+        connection.listen((message)=>{
+            setMessage((prevMessages)=>[...prevMessages,message])
+        });
+        return()=>{
+            setMessage([])
+            connection.unsubscribe()
+        }
+    },[subscribedTo])
 
     return(
         <div>

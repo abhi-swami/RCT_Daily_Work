@@ -9,7 +9,7 @@ export const user=[
     }
 ];
 function createConnection(user){
-    console.log(`started listening to ${user}`);
+    console.log(`started listening to ${user.name}`);
     let id;
     function listen(callback){
         id=setInterval(()=>{
