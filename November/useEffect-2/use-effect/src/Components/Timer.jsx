@@ -102,7 +102,7 @@ const Timer=()=>{
     const[count,setCount]=React.useState(10);
     React.useEffect(()=>{
         const id=setInterval(()=>{
-            const id=setCount((preValue)=>{
+            setCount((preValue)=>{
                 if(preValue===0){
                     clearInterval(id);
                     return preValue;
