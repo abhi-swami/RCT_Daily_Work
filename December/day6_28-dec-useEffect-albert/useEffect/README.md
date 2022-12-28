@@ -6,7 +6,6 @@
 
 - Do not push node_modules to github
 - Rubrics / Marking Scheme is below ( we will convert this back to a scale of 10 )
-
 ```
 ✅ Able to submit and run the application - 1 mark
 ✅ CountriesCard works correctly - 1 mark

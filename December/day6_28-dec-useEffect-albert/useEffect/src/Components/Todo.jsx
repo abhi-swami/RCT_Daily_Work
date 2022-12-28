@@ -15,7 +15,7 @@ export default function Todo() {
       status: false
     };
     setIsLoading(true);
-    return fetch(`https://json-server-mocker-masai.herokuapp.com/tasks`, {
+    return fetch(`https://jsonplaceholder.typicode.com/todos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -38,7 +38,7 @@ export default function Todo() {
   const getTodos = (page) => {
     setIsLoading(true);
     return fetch(
-      `https://json-server-mocker-masai.herokuapp.com/tasks?_page=${page}&_limit=5`
+      `https://jsonplaceholder.typicode.com/todos?_page=${page}&_limit=5`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -54,12 +54,13 @@ export default function Todo() {
   };
 
   let deleteTask = async (id) => {
-    await fetch(`https://json-server-mocker-masai.herokuapp.com/tasks/${id}`, {
+    await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
       }
     });
+    console.log("i am here")
     getTodos(page);
   };
 
